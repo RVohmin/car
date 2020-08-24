@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS marks;
+create table marks
+(
+    id   serial primary key,
+    name varchar(200) not null unique
+);
+
+DROP TABLE IF EXISTS models;
+create table models
+(
+    id   serial primary key,
+    name varchar(200) not null unique
+);
