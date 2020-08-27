@@ -13,7 +13,11 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">false</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
-        <mapping class="persistence.MarkCar"/>
-        <mapping class="persistence.ModelCar"/>
+<!--        <mapping class="persistence.MarkCar"/>-->
+<!--        <mapping class="persistence.ModelCar"/>-->
+        <mapping class="persistence.Engine"/>
+        <mapping class="persistence.Car"/>
+        <mapping class="persistence.Driver"/>
+
     </session-factory>
 </hibernate-configuration>

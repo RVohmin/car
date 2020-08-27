@@ -1,13 +1,35 @@
-DROP TABLE IF EXISTS marks;
-create table marks
+-- DROP TABLE IF EXISTS marks;
+-- create table marks
+-- (
+--     id   serial primary key,
+--     name varchar(200) not null unique
+-- );
+--
+-- DROP TABLE IF EXISTS models;
+-- create table models
+-- (
+--     id   serial primary key,
+--     name varchar(200) not null unique
+-- );
+
+DROP TABLE IF EXISTS cars;
+create table if not exists cars
 (
     id   serial primary key,
-    name varchar(200) not null unique
+    name varchar(200) not null,
+    engine int references engine(id) not null
 );
 
-DROP TABLE IF EXISTS models;
-create table models
+DROP TABLE IF EXISTS engine;
+create table if not exists engine
 (
     id   serial primary key,
-    name varchar(200) not null unique
+    name varchar(200) not null
+);
+
+DROP TABLE IF EXISTS driver;
+create table if not exists driver
+(
+    id   serial primary key,
+    name varchar(200) not null
 );
