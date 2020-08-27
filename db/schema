@@ -12,24 +12,29 @@
 --     name varchar(200) not null unique
 -- );
 
-DROP TABLE IF EXISTS cars;
-create table if not exists cars
-(
-    id   serial primary key,
-    name varchar(200) not null,
-    engine int references engine(id) not null
-);
-
 DROP TABLE IF EXISTS engine;
 create table if not exists engine
 (
     id   serial primary key,
     name varchar(200) not null
 );
-
+DROP TABLE IF EXISTS cars;
+create table if not exists cars
+(
+    id   serial primary key,
+    name varchar(200) not null,
+    engine_id int not null unique references engine (id)
+);
 DROP TABLE IF EXISTS driver;
 create table if not exists driver
 (
     id   serial primary key,
     name varchar(200) not null
+);
+DROP TABLE IF EXISTS history_owner;
+create table if not exists history_owner
+(
+    id serial primary key,
+    driver_id int not null references driver(id),
+    car_id int not null references cars(id)
 );
